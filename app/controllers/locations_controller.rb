@@ -5,7 +5,17 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+
   end
+
+  def search
+    if params[:search]
+      @locations = locations.find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      @locations = location.find(:all)
+    end
+  end
+
 
   # GET /locations/1
   # GET /locations/1.json
