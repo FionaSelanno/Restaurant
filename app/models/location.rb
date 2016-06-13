@@ -1,9 +1,7 @@
 class Location < ActiveRecord::Base
-  # def self.search(search)
-  #   if search
-  #     find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
-  #   else
-  #     find(:all)
-  #   end
-  # end
+
+  def self.search(search)
+    where("restaurant_name ILIKE ? OR city ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%"  )
+  end
+
 end

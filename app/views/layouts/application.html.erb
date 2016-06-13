@@ -8,6 +8,11 @@
 </head>
 <body>
 
+<%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Locations" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <%= yield %>
 
 </body>

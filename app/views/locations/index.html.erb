@@ -2,11 +2,9 @@
 
 <h1>Listing Locations</h1>
 
-<% form_tag locations_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :location => nil %>
-  </p>
+<!-- If the search doesn't give any results -->
+<% if @locations.blank? %>
+  <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
 <% end %>
 
 <table>
