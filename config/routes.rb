@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'locations#index'
+  root 'location#index'
   resources :bookings
   resources :menus
   resources :locations
