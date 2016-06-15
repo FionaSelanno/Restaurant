@@ -5,9 +5,26 @@
 
 
 
+<!-- If the search doesn't give any results -->
+<% if @locations.blank? %>
+  <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
+<% end %>
 
+<table>
+  <thead>
+    <tr>
+      <th>Restaurant name</th>
+      <th>Description</th>
+      <th>Seats</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th> City </th>
+      <th> Address </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-<div class="row">
+  <tbody>
     <% @locations.each do |location| %>
 
       <div class="col-sm-6 col-md-4">
@@ -20,7 +37,7 @@
           </div>
         </div>
       </div>
-    
+
 
 
 
