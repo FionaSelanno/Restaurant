@@ -5,7 +5,13 @@ class LocationsController < ApplicationController
   # GET /locations.json
   def index
     @locations = Location.all
+      if params[:search]
+        @locations = Location.search(params[:search]).order("created_at DESC")
+      else
+        @locations = Location.all.order("created_at DESC")
+      end
   end
+
 
   # GET /locations/1
   # GET /locations/1.json
