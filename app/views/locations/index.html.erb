@@ -3,32 +3,7 @@
 <h1>Listing Locations</h1>
 
 
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="" class="thumbnail">
-      <img src="http://cdn.bizar.nl/wp-content/uploads/2016/02/restaurant-939435_960_720.jpg" >
-    </a>
-  </div>
-  ...
-</div>
 
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="" class="thumbnail">
-      <img src="http://cdn.bizar.nl/wp-content/uploads/2016/02/restaurant-939435_960_720.jpg" >
-    </a>
-  </div>
-  ...
-</div>
-
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="" class="thumbnail">
-      test text
-      <img src="http://cdn.bizar.nl/wp-content/uploads/2016/02/restaurant-939435_960_720.jpg" >
-    </a>
-  </div>
-</div>
 
 <!-- If the search doesn't give any results -->
 <% if @locations.blank? %>
@@ -51,22 +26,24 @@
 
   <tbody>
     <% @locations.each do |location| %>
-      <tr>
-        <td><%= location.restaurant_name %></td>
-        <td><%= location.description %></td>
-        <td><%= location.seats %></td>
-        <td><%= location.email %></td>
-        <td><%= location.phone %></td>
-        <td><%= location.city %></td>
-        <td><%= location.address %></td>
-        <td><%= link_to 'Show', location %></td>
-        <td><%= link_to 'Edit', edit_location_path(location) %></td>
-        <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+      <div class="col-sm-6 col-md-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <h3><%= location.restaurant_name %></h3>
+            <p><%= location.city%>, <%= location.seats%> seats </p>
+            <p><%= link_to 'Show', location, class:"btn btn-default" %><a href="#" class="btn btn-default" role="button">reserve</a></p>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    <% end %>
+  </div>
+
+
 
 <%= link_to 'New Location', new_location_path %>
