@@ -12,6 +12,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160615145224) do
+ActiveRecord::Schema.define(version: 20160615144411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,7 +21,10 @@ ActiveRecord::Schema.define(version: 20160615145224) do
     t.boolean  "booked?"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "bookings", ["user_id"], name: "index_bookings_on_user_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string   "restaurant_name"
@@ -32,7 +36,10 @@ ActiveRecord::Schema.define(version: 20160615145224) do
     t.datetime "updated_at",      null: false
     t.string   "city"
     t.string   "address"
+    t.integer  "user_id"
   end
+
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree
 
   create_table "menus", force: :cascade do |t|
     t.string   "menu_name"
@@ -63,7 +70,12 @@ ActiveRecord::Schema.define(version: 20160615145224) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   add_foreign_key "search_results", "locations"
   add_foreign_key "search_results", "menus"
   add_foreign_key "search_results", "users"
+=======
+  add_foreign_key "bookings", "users"
+  add_foreign_key "locations", "users"
+>>>>>>> d97bbeac827454673f004b9e49a6b11f3c8272a8
 end
