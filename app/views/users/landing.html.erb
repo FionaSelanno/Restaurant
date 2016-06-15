@@ -1,22 +1,18 @@
-<h1> Welcome to our page! </h1>
 
+  <%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %>
 
-<<<<<<< HEAD
-=======
-<div>
-<form>
-<input type ="text" name ="Search restaurants">
-
-<input type="submit" value="Submit">
+<div class = "landing_bg">
+  <div class = "landing_srch">
+<form class="navbar-form navbar-left" role="search">
+  <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch " %>
+    <%= submit_tag "Search", class: "btn btn-default", :name => nil %>
+  <% end %>
+</div>
 </div>
 
-</form>
-
->>>>>>> 2b842550b585a61a1cb51111ec007a91b822cc0c
-
-
 
 <div>
 
-<%= link_to 'See all restaurants', locations_path(@index) %>
+<!-- # <%= link_to 'See all restaurants', locations_path(@index) %> -->
 </div>
