@@ -6,7 +6,7 @@ belongs_to :user
 
 
   def self.search(search)
-    where("restaurant_name ILIKE ? OR city ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%"  )
+    where("menu_name ILIKE ? OR menu_discription ILIKE ?""%#{search}%", "%#{search}%"  )
   end
 
 end

@@ -11,6 +11,12 @@
       <th>Price</th>
       <th>Location</th>
       <th colspan="3"></th>
+      <form class="navbar-form navbar-left" role="search">
+      <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch" %>
+        <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
+      <% end %>
+    </form>
     </tr>
   </thead>
 

@@ -5,6 +5,11 @@ class MenusController < ApplicationController
   # GET /menus.json
   def index
     @menus = Menu.all
+    if params[:search]
+      @menus = Menu.search(params[:search]).order("created_at DESC")
+    else
+      @menus = Menu .all.order("created_at DESC")
+    end
   end
 
   # GET /menus/1
