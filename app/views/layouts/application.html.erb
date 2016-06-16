@@ -41,7 +41,9 @@
             </ul>
           </li>
         </ul>
-        <% if current_page?('/locations/index') %>
+
+        <!-- Search bar in navigation depending on which path you are at -->
+        <!-- <% if current_page?('/locations/index') %>
           <form class="navbar-form navbar-left" role="search">
             <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
               <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control" %>
@@ -49,7 +51,7 @@
             </form>
             <% end %>
             <% elsif current_page?('/menus/index') %>
-              <form class="navbar-form navbar-left" role="search">
+              <form class="navbar-form navbar-left" role="search"> -->
 
                 <%= form_tag(menus_path, :method => "get", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], placeholder: "Search through menus", class: "form-control" %>
