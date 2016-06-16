@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  root 'users#landing'
+  devise_for :users
+  root 'landing#index'
+
   resources :bookings
   resources :menus
   resources :locations
-  resources :users
 
   get "search" => "search_results#index"
 
