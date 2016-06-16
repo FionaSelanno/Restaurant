@@ -8,9 +8,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+      <ul class="nav navbar-nav navbar-left">
+
       <%= link_to root_url, class: "navbar-brand" do %>
-        RestaurantFinderz0rz
-      <% end %>
+          Foodle<% end %>
+      <li><%= link_to "Restaurants", locations_path %></li>
+      <li><%= link_to "Menus", menus_path %></li>
     </div>
       <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -23,6 +26,7 @@
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
       <ul class="nav navbar-nav navbar-right">
+
         <% if user_signed_in? %>
           <li>
             <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
