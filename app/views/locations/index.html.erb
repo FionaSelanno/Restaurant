@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 <!-- <div class="location_page" style="background-image: url(/assets/locshowbg.jpg);"> -->
 <%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %>
@@ -8,10 +9,11 @@
   <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
   <% end %>
 
-  <div class = "landing_srch">
+
+
     <form class="navbar-form navbar-left" role="search">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch" %>
+      <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch forward" %>
       <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
       <% end %>
     </form>
