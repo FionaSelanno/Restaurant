@@ -22,6 +22,17 @@ a:visited {
   font-size: 1.5em;
 }
 
+h1 {
+  color: #fff;
+  font-size: 4em;
+}
+
+h2 {
+  color: #fff;
+  padding-top: 0px;
+  margin-top: 0px;
+  font-style: italic;;
+}
 .landing_bg {
   display: flex;
   position: absolute;
