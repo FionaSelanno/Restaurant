@@ -12,7 +12,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20160615145224) do
-ActiveRecord::Schema.define(version: 20160615144411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,12 +69,9 @@ ActiveRecord::Schema.define(version: 20160615144411) do
     t.datetime "updated_at", null: false
   end
 
-<<<<<<< HEAD
+  add_foreign_key "bookings", "users"
+  add_foreign_key "locations", "users"
   add_foreign_key "search_results", "locations"
   add_foreign_key "search_results", "menus"
   add_foreign_key "search_results", "users"
-=======
-  add_foreign_key "bookings", "users"
-  add_foreign_key "locations", "users"
->>>>>>> d97bbeac827454673f004b9e49a6b11f3c8272a8
 end

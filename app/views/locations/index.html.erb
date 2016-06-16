@@ -1,15 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Locations</h1>
+<h1>Find a good place to eat</h1>
 
+<%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %>
 
-
-
+<div class = "landing_bg">
+<div class = "landing_srch">
+<form class="navbar-form navbar-left" role="search">
+<%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch " %>
+  <%= submit_tag "Search", class: "btn btn-default", :name => nil %>
+<% end %>
+</div>
+</div>
 <!-- If the search doesn't give any results -->
 <% if @locations.blank? %>
   <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
 <% end %>
 
+
+<div class = "location_src">
 <table>
   <thead>
     <tr>
@@ -40,9 +50,9 @@
 
 
 
-
     <% end %>
   </div>
+</div>
 
 
 
