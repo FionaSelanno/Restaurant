@@ -1,50 +1,39 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Find a good place to eat</h1>
 
-<!-- # <%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %> -->
-
-
-</div>
 <!-- If the search doesn't give any results -->
 <% if @locations.blank? %>
   <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
 <% end %>
 
-
 <!-- <div class = "location_src"> -->
-<table>
-  <thead>
-    <div class = "landing_srch">
+<!-- <div class= "top_body_location"> -->
+  <div class = "landing_srch">
     <form class="navbar-form navbar-left" role="search">
-    <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+      <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch" %>
       <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
-    <% end %>
-  </form>
-</div>
-  </thead>
+      <% end %>
+    </form>
+  </div>
+<!-- </div> -->
 
-  <tbody>
-    <% @locations.each do |location| %>
-
-      <div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-          <img src="..." alt="...">
-          <div class="caption">
-            <h3><%= location.restaurant_name %></h3>
-            <p><%= location.city%>, <%= location.seats%> seats </p>
-            <p><%= link_to 'More Info', location, class:"btn btn-primary" %>  &nbsp<a href="#" class="btn btn-success" role="button">Reserve</a></p>
+<table>
+  <% @locations.each do |location| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="..." alt="...">
+        <div class="caption">
+          <h3><%= location.restaurant_name %></h3>
+          <p><%= location.city%>, <%= location.seats%> seats </p>
+          <p><%= link_to 'More Info', location, class:"btn btn-primary" %>  &nbsp<a href="#" class="btn btn-success" role="button">Reserve</a></p>
           </div>
         </div>
       </div>
-
-
-
     <% end %>
-  </div>
-</div>
-
+  </table>
 
 
 <%= link_to 'New Location', new_location_path %>
