@@ -9,7 +9,4 @@ class SearchResultsController < ApplicationController
     @q = User.search(params[:q])
     @users = @search.result
   end
-
-  end
-
 end
