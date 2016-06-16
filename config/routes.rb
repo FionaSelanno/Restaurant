@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :menus
   resources :locations
 
+  resources :users, only: [:show]
+  resources :profiles
   get "search" => "search_results#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

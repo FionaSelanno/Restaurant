@@ -18,10 +18,11 @@ just_oreos = Location.create ({restaurant_name: "Just Oreo's", description: "We 
 
 blazin_it = Location.create ({restaurant_name: "Blazing it!", description: "Couldn be more relaxed.", seats: 420, email: "420@blazinit.com", phone: "06420420", city: "Amsterdam", address: "Hightower 420"})
 
+
 # Users create
-User.create(email:"ramon@test.nl", password:"abcd1234")
-User.create(email:"steven@test.nl", password:"abcd1234")
-User.create(email:"fiona@test.nl", password:"abcd1234")
+ramon = User.create(email:"ramon@test.nl", password:"abcd1234")
+steven = User.create(email:"steven@test.nl", password:"abcd1234")
+fiona = User.create(email:"fiona@test.nl", password:"abcd1234")
 
 # Menu create
 Menu.create({menu_name:"Hutspot", menu_discription:"Hutspot is a typical Dutch dish. It's mashed potatoes with carrots and onion. Together with a Dutch saucage called 'Boerenworst' and a buttery gravy you will taste real Dutch cuisine", cuisine:"Dutch", price:8, location_id:de_gulden_draak.id})

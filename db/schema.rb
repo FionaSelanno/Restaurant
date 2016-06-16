@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160616134951) do
+ActiveRecord::Schema.define(version: 20160616150853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +52,14 @@ ActiveRecord::Schema.define(version: 20160616134951) do
 
   add_index "menus", ["location_id"], name: "index_menus_on_location_id", using: :btree
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "search_results", force: :cascade do |t|
     t.integer  "location_id"
     t.integer  "menu_id"
@@ -65,18 +73,20 @@ ActiveRecord::Schema.define(version: 20160616134951) do
   add_index "search_results", ["user_id"], name: "index_search_results_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "name"
+    t.string   "email",                              default: "", null: false
+    t.string   "phone"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "encrypted_password",     limit: 128, default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
     t.string   "avatar"
   end
 
@@ -86,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160616134951) do
   add_foreign_key "bookings", "users"
   add_foreign_key "locations", "users"
   add_foreign_key "menus", "locations"
+  add_foreign_key "profiles", "users"
   add_foreign_key "search_results", "locations"
   add_foreign_key "search_results", "menus"
   add_foreign_key "search_results", "users"

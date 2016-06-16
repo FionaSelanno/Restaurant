@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @user = User.find(params[:id])
   end
 
   # GET /users/new
@@ -51,10 +52,10 @@ class UsersController < ApplicationController
     end
   end
 
-  if params[:user][:password].blank?
-  params[:user].delete(:password)
-  params[:user].delete(:password_confirmation)
-end
+  # if params[:user][:password].blank?
+  # params[:user].delete(:password)
+  # params[:user].delete(:password_confirmation)
+# end
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
