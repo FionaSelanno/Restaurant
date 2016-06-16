@@ -5,7 +5,7 @@ class Menu < ActiveRecord::Base
 
 
     def self.search(search)
-      where("restaurant_name ILIKE ? OR city ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%"  )
+      where("menu_name ILIKE ? OR cuisine ILIKE ? OR menu_discription ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%"  )
     end
 
 end
