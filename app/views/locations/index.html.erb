@@ -1,17 +1,16 @@
-<div class = "landing_bg">
-</div>
-<p id="notice"><%= notice %></p>
 
-<h1>Find a good place to eat</h1>
+<p id="notice"><%= notice %></p>
+<!-- <div class="location_page" style="background-image: url(/assets/locshowbg.jpg);"> -->
+<%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %>
+  <h2>Find a good place to eat</h2>
 
 <!-- If the search doesn't give any results -->
-<% if @locations.blank? %>
+  <% if @locations.blank? %>
   <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
-<% end %>
+  <% end %>
 
-<!-- <div class = "location_src"> -->
-<!-- <div class= "top_body_location"> -->
-  <div class = "landing_srch forward">
+
+
     <form class="navbar-form navbar-left" role="search">
       <%= form_tag(locations_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch forward" %>
@@ -19,11 +18,12 @@
       <% end %>
     </form>
   </div>
-<!-- </div> -->
+<br>
 
 <table>
+  <div class="row">
   <% @locations.each do |location| %>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-sm-4">
       <div class="thumbnail">
         <img src="..." alt="...">
         <div class="caption">
@@ -34,7 +34,8 @@
         </div>
       </div>
     <% end %>
-  </table>
+  </div>
 
-
-<%= link_to 'New Location', new_location_path %>
+</table>
+</div>
+<!-- <%= link_to 'New Location', new_location_path %> -->

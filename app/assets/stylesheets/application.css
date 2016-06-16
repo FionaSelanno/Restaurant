@@ -40,12 +40,12 @@ h2 {
   width: 100vw;
   align-items: center;
   justify-content: center;
+  background: no-repeat center center fixed;
   z-index: -1;
 
 }
 
-.class {
-}
+
 
 .landing_srch {
     display: table-cell;
