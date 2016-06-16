@@ -14,7 +14,7 @@ User.create(name:"Ramon", email:"ramon@test.nl", phone:"06-11111111")
 User.create(name:"Steven", email:"steven@test.nl", phone:"06-21111111")
 User.create(name:"Fiona", email:"fiona@test.nl", phone:"06-31111111")
 
-Menu.create({menu_name:"Hutspot", menu_discription:"Hutspot is a typical Dutch dish. It's mashed potatoes with carrots and onion. Together with a Dutch saucage called 'Boerenworst' and a buttery gravy you will taste real Dutch cuisine", cuisine:"Dutch", price:8, location_id:de_gulden_draak.id})
+Menu.create({menu_name:"Hutspot", menu_discription:"Hutspot is a typical Dutch dish. It's mashed potatoes with carrots and onion. Together with a Dutch saucage called 'Boerenworst' and a buttery gravy you will taste real Dutch cuisine", cuisine:"Dutch", price:8, location:de_gulden_draak})
 Menu.create({menu_name:"Chicken Tagine", menu_discription:"In a traditional Tagin cooked chicken with dates en almonds. Sidedishes: couscous, bread and olives. Come and taste Moroccon food!", cuisine:"Moroccon", price: 9})
 Menu.create({menu_name:"Vegetarian bbq", menu_discription:"Taste our vegeratian bbq. I only use organic products out of my own garden", cuisine: "vegeratian", price: 10})
 Menu.create({menu_name:"Coq au vin", menu_discription:"French stew with chicken, red wine and seasonal veggies", cuisine:"French", price:12})

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.2.5'
 
 
+gem 'devise', '~> 3.5'
+
 
 gem 'carrierwave'
 
