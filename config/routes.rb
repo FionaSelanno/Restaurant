@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   resources :bookings
   resources :menus
   resources :locations
+  devise_for :users, :path_prefix => 'my'
   resources :users
-  devise_for :users
-
+  # scope "/admin" do
+  # resources :users
+  #   end
   get "search" => "search_results#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
