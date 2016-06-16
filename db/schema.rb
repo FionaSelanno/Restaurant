@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20160615145224) do
 ActiveRecord::Schema.define(version: 20160615153107) do
 
   # These are extensions that must be enabled in order to support this database
@@ -74,7 +75,10 @@ ActiveRecord::Schema.define(version: 20160615153107) do
 
   add_foreign_key "bookings", "users"
   add_foreign_key "locations", "users"
+<<<<<<< HEAD
+=======
   add_foreign_key "menus", "locations"
+>>>>>>> c4c5ec13cdd848999c468fcc7acbb7c75849e1e9
   add_foreign_key "search_results", "locations"
   add_foreign_key "search_results", "menus"
   add_foreign_key "search_results", "users"

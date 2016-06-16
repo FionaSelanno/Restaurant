@@ -13,7 +13,26 @@
  *= require_tree .
  *= require_self
  */
+a:visited {
+  color: #fff;
+}
 
+.btn {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+h1 {
+  color: #fff;
+  font-size: 4em;
+}
+
+h2 {
+  color: #fff;
+  padding-top: 0px;
+  margin-top: 0px;
+  font-style: italic;;
+}
 .landing_bg {
   display: flex;
   position: absolute;
@@ -29,4 +48,13 @@
     align-items: center;
     justify-content: center;
 
+  }
+
+  .location_src {
+    display: inline-block;
+    /*position: absolute;*/
+    height: 100%;
+    width: 100%;
+    /*align-items: center;
+    justify-content: center;*/
   }
