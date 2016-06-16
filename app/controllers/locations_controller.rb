@@ -1,4 +1,5 @@
 class LocationsController < ApplicationController
+  before_action :authorize_user!, except: [:index, :show]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -31,6 +32,7 @@ class LocationsController < ApplicationController
   # POST /locations.json
   def create
     @location = Location.new(location_params)
+    @location.user = current_user
 
     respond_to do |format|
       if @location.save

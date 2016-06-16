@@ -10,9 +10,9 @@
 de_gulden_draak = Location.create ({restaurant_name: "De Gulden Draak", description: "Come and eat! We have different menus to choose from!", seats: 6, email: "gulden@draak.nl", phone: "0612435612", city: "Amsterdam", address: "Drakenweg 1"})
 wouters_wicked = Location.create ({restaurant_name: "Wouter's Wicked Waffles", description: "I love to make waffles all day. Check the menu for more info!", seats: 4, email: "wouter@wickedwaffles.com", phone: "0612435612", city: "Rotterdam", address: "Wafelweg 201"})
 
-User.create(name:"Ramon", email:"ramon@test.nl", phone:"06-11111111")
-User.create(name:"Steven", email:"steven@test.nl", phone:"06-21111111")
-User.create(name:"Fiona", email:"fiona@test.nl", phone:"06-31111111")
+User.create(email:"ramon@test.nl", password:"abcd1234")
+User.create(email:"steven@test.nl", password:"abcd1234")
+User.create(email:"fiona@test.nl", password:"abcd1234")
 
 Menu.create({menu_name:"Hutspot", menu_discription:"Hutspot is a typical Dutch dish. It's mashed potatoes with carrots and onion. Together with a Dutch saucage called 'Boerenworst' and a buttery gravy you will taste real Dutch cuisine", cuisine:"Dutch", price:8, location_id:de_gulden_draak.id})
 Menu.create({menu_name:"Chicken Tagine", menu_discription:"In a traditional Tagin cooked chicken with dates en almonds. Sidedishes: couscous, bread and olives. Come and taste Moroccon food!", cuisine:"Moroccon", price: 9})

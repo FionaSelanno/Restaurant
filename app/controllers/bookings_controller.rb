@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  before_action :authorize_user!
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
@@ -25,6 +26,7 @@ class BookingsController < ApplicationController
   # POST /bookings.json
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
 
     respond_to do |format|
       if @booking.save
