@@ -13,6 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20160617115818) do
 
+ActiveRecord::Schema.define(version: 20160617131009) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160617115818) do
     t.string   "city"
     t.string   "address"
     t.integer  "user_id"
+    t.string   "restaurant_pic"
   end
 
   add_index "locations", ["user_id"], name: "index_locations_on_user_id", using: :btree

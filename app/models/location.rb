@@ -1,4 +1,5 @@
 class Location < ActiveRecord::Base
+  mount_uploader :restaurant_pic, ImageUploader
 
   has_many :menus
   has_many :bookings

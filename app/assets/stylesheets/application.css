@@ -65,11 +65,12 @@ h2 {
 }*/
 
 .search-divider {
-  padding-bottom:1000px;
+  padding-bottom:1370px;
   z-index: -10000;
   position: absolute;
   display: flex;
   width: 100vw;
+  height: auto;
 }
 
 .search-container {
