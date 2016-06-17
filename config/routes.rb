@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :menus
   resources :locations
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :new, :create]
   resources :profiles
 
   # The priority is based upon order of creation: first created -> highest priority.
