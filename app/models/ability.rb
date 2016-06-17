@@ -9,11 +9,11 @@ class Ability
 
     if user.persisted? # in db, so logged in
       # Can MANAGE (create, read, update, destroy, etc.) own Post
-      can :manage, Post, user: user
+      can :manage, Location, user: user
 
       # Can CREATE and DESTROY own Like
-      can :create,  Like, user: user
-      can :destroy, Like, user: user
+      can :create,  Menu, user: user
+      can :destroy, Menu, user: user
     end
   end
 end

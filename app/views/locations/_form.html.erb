@@ -1,3 +1,4 @@
+<div class= "container_bg_color">
 <%= form_for(@location) do |f| %>
   <% if @location.errors.any? %>
     <div id="error_explanation">
@@ -11,8 +12,12 @@
     </div>
   <% end %>
 
-
-
+  <table>
+    <div class="row">
+      <div class="col-sm-4">
+      </div>
+      <div class="col-sm-4">
+      <p>
   <div class="field">
     <%= f.label :restaurant_name %><br>
     <%= f.text_field :restaurant_name %>
@@ -41,4 +46,12 @@
   <%= f.label :restaurant_pic %><br />
   <%= f.file_field :restaurant_pic , autocomplete: "off" %>
   </div>
+
+</p>
+</div>
+</div>
+
+
+</table>
 <% end %>
+</div>
