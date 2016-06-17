@@ -53,12 +53,16 @@ h2 {
 .search-results{
   position: absolute;
 bottom: 0;
+z-index: -100;
 }
+
+.
 
 .search-container {
   padding-bottom:1000px;
   bottom: 0;
   position: relative;
+  z-index: -100;
 }
 
 
@@ -67,7 +71,6 @@ bottom: 0;
     vertical-align: middle;
     align-items: center;
     justify-content: center;
-
   }
 
   .location_src {
@@ -77,4 +80,5 @@ bottom: 0;
     width: 100%;
     /*align-items: center;
     justify-content: center;*/
+
   }
