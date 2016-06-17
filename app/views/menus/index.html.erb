@@ -1,6 +1,7 @@
 
-<h1>Listing Menus</h1>
-
+<% if @locations.blank? %>
+<h4 class = "white">We couldn't find anything containing the term "<%= params[:search] %>".</h4>
+<% end %>
 <table>
   <thead>
     <tr>
