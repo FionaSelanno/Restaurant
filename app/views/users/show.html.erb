@@ -19,7 +19,8 @@
         <strong>E-mail:</strong>
         <%= @user.email %></p>
 <hr>
-<p><a href="#" class="btn btn-success" role="button">Make a Foodle</a></p>
+<!-- <p><a href="#" class="btn btn-success" role="button">Make a Foodle</a></p> -->
+  <p><%= link_to 'Make a Foodle', new_location_path, class:"btn btn-primary" %>  &nbsp<a href="#" class="btn btn-success" role="button">Reserve</a></p>
 <div class="col-sm-4">
 </div>
       </div>

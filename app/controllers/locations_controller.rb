@@ -1,5 +1,7 @@
 class LocationsController < ApplicationController
-  before_action :authorize_user!, except: [:index, :show]
+  load_and_authorize_resource
+
+  # before_action :authorize_user!, except: [:index, :show]
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
   # GET /locations
@@ -30,19 +32,33 @@ class LocationsController < ApplicationController
 
   # POST /locations
   # POST /locations.json
+  # def create
+  #   @location = Location.new(location_params)
+  #   @location.user = current_user
+  #
+  #   respond_to do |format|
+  #     if @location.save
+  #       format.html { redirect_to @location, notice: 'Location was successfully created.' }
+  #       format.json { render :show, status: :created, location: @location }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @location.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
   def create
+    # location_params = params.require( :location ).permit(:restaurant_name, :description, :seats, :email, :phone, :restaurant_pic)
+
     @location = Location.new(location_params)
     @location.user = current_user
+     authorize! :create, @location
 
-    respond_to do |format|
-      if @location.save
-        format.html { redirect_to @location, notice: 'Location was successfully created.' }
-        format.json { render :show, status: :created, location: @location }
-      else
-        format.html { render :new }
-        format.json { render json: @location.errors, status: :unprocessable_entity }
-      end
-    end
+     if @location.save
+        redirect_to locations_path
+     else
+        render locations_path
+     end
   end
 
   # PATCH/PUT /locations/1

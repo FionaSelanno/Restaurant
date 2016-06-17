@@ -3,6 +3,8 @@ ruby '2.2.5'
 
 gem 'cloudinary'
 
+gem 'cancancan'
+
 gem 'carrierwave'
 
 gem 'ransack'
