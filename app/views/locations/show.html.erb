@@ -8,7 +8,7 @@
     </div>
     <div class="col-sm-4">
       <div class="thumbnail">
-        <img src="..." alt="...">
+        <%= image_tag(@location.restaurant_pic.thumbnail.url, :class => "thumbnail inline") %>
         <div class="caption">
           <p>
             <h3> <%= @location.restaurant_name %></h3>
