@@ -22,14 +22,17 @@
 <h4 class = "white">We couldn't find anything containing the term "<%= params[:search] %>".</h4>
 <% end %>
 </div>
-<div class = "search-divider">
+
+<div class = "search-divider container_bg_color">
+
   <!-- <div class="search-container"> -->
-    <div class = "search-results">
-    <% @locations.each do |location| %>
+    <div class = "search-results ">
+      <% @locations.each do |location| %>
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="..." alt="...">
           <div class="caption">
+            <%= image_tag(location.restaurant_pic.thumbnail.url, :class => "thumbnail inline") %>
             <h3><%= location.restaurant_name %></h3>
             <p><%= location.city%>, <%= location.seats%> seats </p>
             <p><%= link_to 'More Info', location, class:"btn btn-primary" %>  &nbsp<a href="#" class="btn btn-success" role="button">Reserve</a></p>
