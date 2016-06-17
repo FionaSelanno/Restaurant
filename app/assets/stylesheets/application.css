@@ -48,23 +48,36 @@ h2 {
   background: no-repeat center center fixed;
   z-index: -1;
 
+
 }
 
 .search-results{
   position: absolute;
-bottom: 0;
-z-index: -100;
+  bottom: 0;
+  /*z-index: -100;*/
 }
 
-.
+/*.forward {
+  z-index:100;
+}*/
+
+.search-divider {
+  padding-bottom:1000px;
+  z-index: -10000;
+  position: absolute;
+  display: flex;
+  width: 100vw;
+}
 
 .search-container {
-  padding-bottom:1000px;
   bottom: 0;
   position: relative;
-  z-index: -100;
+  /*z-index: -100;*/
 }
 
+.white {
+  color: #fff;
+}
 
 .landing_srch {
     display: table-cell;
