@@ -17,6 +17,9 @@
 /** {
   border: 2px solid red;
 }*/
+.container_bg_color {
+background-color: #EFE9D3;
+}
 
 a:visited {
   color: #fff;
