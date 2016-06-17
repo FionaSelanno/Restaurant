@@ -6,7 +6,8 @@ class Location < ActiveRecord::Base
 
 
   def self.search(search)
-    where("menu_name ILIKE ? OR menu_discription ILIKE ?""%#{search}%", "%#{search}%"  )
+    where("restaurant_name ILIKE ?", "%#{search}%")
+    where("city ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%"   )
   end
 
 end
