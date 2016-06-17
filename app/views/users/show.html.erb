@@ -1,9 +1,32 @@
-<%= @user.name %>
+<div class= "container_bg_color">
 
-SADjkasdjasdljsladkj
+<table>
+<div class="row">
+<div class="col-sm-4">
+</div>
+<div class="col-sm-4">
+  <div class="thumbnail">
+    <%= image_tag (@user.avatar) %>
+    <div class="caption">
+      <p>
 
+      </p>
+      <hr>
+      <p>
+        <strong>Name:</strong>
+      </p>
+      <p>
+        <strong>E-mail:</strong>
+        <%= @user.email %></p>
+<hr>
+<p><a href="#" class="btn btn-success" role="button">Make a Foodle</a></p>
+<div class="col-sm-4">
+</div>
+      </div>
+    </div>
+  </div>
+</div>
 
+</table>
 
-
-<%= @user.email %>
-<%= image_tag (@user.avatar) %>
+</div>

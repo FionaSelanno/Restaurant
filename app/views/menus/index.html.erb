@@ -1,40 +1,52 @@
 
-<h1>Listing Menus</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Menu name</th>
-      <th>Menu discription</th>
-      <th>Cuisine</th>
-      <th>Price</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-      <form class="navbar-form navbar-left" role="search">
-      <%= form_tag(menus_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch" %>
-        <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
+<!-- <%= image_tag("sprinkles.png", class: "img-responsive landing_bg") %> -->
+<div class= "container_bg_color">
+<div class = "container">
+
+<!-- If the search doesn't give any results -->
+  <% if @menus.blank? %>
+  <h4>We couldn't find anything containing the term "<%= params[:search] %>".</h4>
+  <% end %>
+  <br>
+
+
+    <form class="navbar-form navbar-centre" role="search">
+      <h1>Foodle menu's</h1><%= form_tag(locations_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Find a place to eat..", class: "form-control landing_srch forward" %>
+      <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
       <% end %>
     </form>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @menus.each do |menu| %>
-      <tr>
-        <td><%= menu.menu_name %></td>
-        <td><%= menu.menu_discription %></td>
-        <td><%= menu.cuisine %></td>
-        <td><%= menu.price %></td>
-        <!-- <td><%= menu.location_id%></td> -->
-        <td><%= link_to 'Show', menu %></td>
-        <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
-        <td><%= link_to 'Destroy', menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'New Menu', new_menu_path %>
+
+  <table>
+    <div class="row">
+    <% @menus.each do |menu| %>
+      <div class="col-sm-4">
+        <div class="thumbnail">
+          <img src="..." alt="...">
+          <div class="caption">
+            <p>
+              <strong>Menu name</strong>
+            <%= menu.menu_name %></p>
+
+            <p><strong>Menu discription</strong>
+            <%= menu.menu_discription %></p>
+            <p><strong>Cuisine</strong>
+            <%= menu.cuisine %></p>
+            <p><strong>Price</strong>
+            <%= menu.price %> euro</p>
+            <p><a href="#" class="btn btn-success" role="button">Reserve</a></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </table>
+  </div>
+
+</div>
+</div>
