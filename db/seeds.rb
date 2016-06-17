@@ -9,13 +9,9 @@
 
 # Restaurants
 de_gulden_draak = Location.create ({restaurant_name: "De Gulden Draak", description: "Come and eat! We have different menus to choose from!", seats: 6, email: "gulden@draak.nl", phone: "0612435612", city: "Amsterdam", address: "Drakenweg 1"})
-
 wouters_wicked = Location.create ({restaurant_name: "Wouter's Wicked Waffles", description: "I love to make waffles all day. Check the menu for more info!", seats: 4, email: "wouter@wickedwaffles.com", phone: "0612435612", city: "Rotterdam", address: "Wafelweg 201"})
-
 la_garage = Location.create ({restaurant_name: "La Garage", description: "The fanciest garage in town!", seats: 5, email: "pieter@lagarage.com", phone: "0613371337", city: "Utrecht", address: "garage 21"})
-
 just_oreos = Location.create ({restaurant_name: "Just Oreo's", description: "We love working with Oreo's", seats: 4, email: "oreo@cookie.com", phone: "0612312337", city: "Amsterdam", address: "Plekje langs de Weg 123"})
-
 blazin_it = Location.create ({restaurant_name: "Blazing it!", description: "Couldn be more relaxed.", seats: 420, email: "420@blazinit.com", phone: "06420420", city: "Amsterdam", address: "Hightower 420"})
 
 
