@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+/** {
+  border: 2px solid red;
+}*/
+
 a:visited {
   color: #fff;
 }
