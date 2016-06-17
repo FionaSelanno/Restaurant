@@ -24,6 +24,9 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+    @location.user = current_user
+    authorize! :new, @location
+
   end
 
   # GET /locations/1/edit
@@ -52,7 +55,9 @@ class LocationsController < ApplicationController
 
     @location = Location.new(location_params)
     @location.user = current_user
+
      authorize! :create, @location
+
 
      if @location.save
         redirect_to locations_path
@@ -60,6 +65,7 @@ class LocationsController < ApplicationController
         render locations_path
      end
   end
+
 
   # PATCH/PUT /locations/1
   # PATCH/PUT /locations/1.json
