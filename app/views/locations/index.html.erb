@@ -2,7 +2,7 @@
 <!-- <div class="location_page" style="background-image: url(/assets/locshowbg.jpg);"> -->
 <%= image_tag("landing_bg.jpg", class: "img-responsive landing_bg") %>
 
-<div class = "container">
+<div class = "landing_bg">
 
 <!-- If the search doesn't give any results -->
   <% if @locations.blank? %>
@@ -17,11 +17,11 @@
       <%= submit_tag "Search", class: "btn btn-primary", :name => nil %>
       <% end %>
     </form>
-  </div>
-<br>
 
-<table>
-  <div class="row">
+</div>
+
+<div class="search-container">
+  <div class = "search-results">
   <% @locations.each do |location| %>
     <div class="col-sm-4">
       <div class="thumbnail">
@@ -36,6 +36,5 @@
     <% end %>
   </div>
 
-</table>
 </div>
 <!-- <%= link_to 'New Location', new_location_path %> -->

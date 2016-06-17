@@ -50,6 +50,16 @@ h2 {
 
 }
 
+.search-results{
+  position: absolute;
+bottom: 0;
+}
+
+.search-container {
+  padding-bottom:1000px;
+  bottom: 0;
+  position: relative;
+}
 
 
 .landing_srch {
